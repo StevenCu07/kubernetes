@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: update-ms
+  template:
+    metadata:
+      labels:
+        app: update-ms
+    spec:
+      containers:
+        - name: update-ms
+          image: stevencu/update-ms:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/postgresdb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: admin

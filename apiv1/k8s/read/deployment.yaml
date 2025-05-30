@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: read-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: read-ms
+  template:
+    metadata:
+      labels:
+        app: read-ms
+    spec:
+      containers:
+        - name: read-ms
+          image: stevencu/read-ms:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/postgresdb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: admin

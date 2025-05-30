@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: create-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: create-ms
+  template:
+    metadata:
+      labels:
+        app: create-ms
+    spec:
+      containers:
+        - name: create-ms
+          image: stevencu/create-ms:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/postgresdb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: admin
