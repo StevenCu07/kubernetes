@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "e68b98ab-e825-47e1-a011-7595d6398d7b",
+		"name": "microServicios2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38224034"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/usuario/create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Carlos\",\r\n    \"apellido\": \"Ruiz\",\r\n    \"cedula\": \"5678901234\",\r\n    \"edad\": 40,\r\n    \"direccion\": \"Carrera 7 # 72-41, Barranquilla\",\r\n    \"email\": \"carlos.ruiz@example.com\",\r\n    \"telefono\": \"+573154321678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30001/api/usuario/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30001",
+					"path": [
+						"api",
+						"usuario",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/usuario/list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:30002/api/usuario/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30002",
+					"path": [
+						"api",
+						"usuario",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/api/usuario/update/4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"brandon\",\r\n    \"apellido\": \"calzada\",\r\n    \"cedula\": \"5678901234\",\r\n    \"edad\": 40,\r\n    \"direccion\": \"Carrera 7 # 72-41, Barranquilla\",\r\n    \"email\": \"carlos.ruiz@example.com\",\r\n    \"telefono\": \"+573154321678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:30003/api/usuario/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30003",
+					"path": [
+						"api",
+						"usuario",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/api/usuario/delete/3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:30004/api/usuario/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30004",
+					"path": [
+						"api",
+						"usuario",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
